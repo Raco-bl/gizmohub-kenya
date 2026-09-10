@@ -1,0 +1,1916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>GizmoHub Kenya | Smart Gadgets</title>
+
+<style>
+
+:root {
+  --primary: #1687e8;
+  --dark: #07111f;
+  --dark2: #101b2d;
+  --light: #f4f7fb;
+  --white: #ffffff;
+  --text: #172033;
+  --gray: #667085;
+  --border: #e4e7ec;
+  --green: #16a34a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--light);
+  color: var(--text);
+}
+
+/* HEADER */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  background: rgba(7,17,31,.97);
+  backdrop-filter: blur(10px);
+
+  color: white;
+
+  padding: 15px 5%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.logo {
+  font-size: 23px;
+  font-weight: 800;
+}
+
+.logo span {
+  color: var(--primary);
+}
+
+nav {
+  display: flex;
+  gap: 22px;
+}
+
+nav a {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: white;
+}
+
+.cart-button {
+  border: none;
+
+  background: var(--primary);
+
+  color: white;
+
+  padding: 11px 16px;
+
+  border-radius: 10px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+
+  min-height: 520px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  color: white;
+
+  position: relative;
+
+  background:
+
+  linear-gradient(
+    rgba(4,10,20,.60),
+    rgba(4,10,20,.78)
+  ),
+
+  url("wallpaper.png");
+
+  background-size: cover;
+
+  background-position: center;
+}
+
+.hero-content {
+
+  max-width: 700px;
+
+  padding: 30px;
+
+}
+
+.hero-badge {
+
+  display: inline-block;
+
+  background: rgba(22,135,232,.20);
+
+  border: 1px solid rgba(255,255,255,.25);
+
+  padding: 9px 15px;
+
+  border-radius: 30px;
+
+  margin-bottom: 20px;
+
+  font-size: 14px;
+
+}
+
+.hero h1 {
+
+  font-size: 52px;
+
+  margin-bottom: 18px;
+
+  line-height: 1.1;
+
+}
+
+.hero h1 span {
+
+  color: #4cb4ff;
+
+}
+
+.hero p {
+
+  color: #d7e2ee;
+
+  font-size: 18px;
+
+  line-height: 1.6;
+
+  margin-bottom: 28px;
+
+}
+
+.hero-buttons {
+
+  display: flex;
+
+  gap: 12px;
+
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+}
+
+.primary-button {
+
+  background: var(--primary);
+
+  color: white;
+
+  text-decoration: none;
+
+  padding: 14px 22px;
+
+  border-radius: 10px;
+
+  font-weight: bold;
+
+}
+
+.secondary-button {
+
+  background: rgba(255,255,255,.12);
+
+  color: white;
+
+  text-decoration: none;
+
+  padding: 14px 22px;
+
+  border-radius: 10px;
+
+  border: 1px solid rgba(255,255,255,.2);
+
+}
+
+/* MAIN */
+
+.container {
+
+  width: 92%;
+
+  max-width: 1200px;
+
+  margin: auto;
+
+}
+
+/* TRUST BAR */
+
+.trust-bar {
+
+  background: white;
+
+  margin-top: -30px;
+
+  position: relative;
+
+  z-index: 10;
+
+  border-radius: 18px;
+
+  padding: 22px;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+
+  display: grid;
+
+  grid-template-columns: repeat(3,1fr);
+
+  gap: 20px;
+
+}
+
+.trust-item {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+}
+
+.trust-icon {
+
+  font-size: 28px;
+
+}
+
+.trust-item h4 {
+
+  margin-bottom: 4px;
+
+}
+
+.trust-item p {
+
+  font-size: 13px;
+
+  color: var(--gray);
+
+}
+
+/* SHOP */
+
+.shop-section {
+
+  padding: 60px 0;
+
+}
+
+.section-heading {
+
+  text-align: center;
+
+  margin-bottom: 30px;
+
+}
+
+.section-heading h2 {
+
+  font-size: 32px;
+
+  margin-bottom: 10px;
+
+}
+
+.section-heading p {
+
+  color: var(--gray);
+
+}
+
+/* SEARCH */
+
+.search-box {
+
+  background: white;
+
+  padding: 8px;
+
+  border-radius: 12px;
+
+  border: 1px solid var(--border);
+
+  display: flex;
+
+  margin-bottom: 20px;
+
+}
+
+.search-box input {
+
+  width: 100%;
+
+  border: none;
+
+  outline: none;
+
+  padding: 12px;
+
+  font-size: 15px;
+
+}
+
+/* CATEGORIES */
+
+.categories {
+
+  display: flex;
+
+  gap: 10px;
+
+  overflow-x: auto;
+
+  padding-bottom: 10px;
+
+  margin-bottom: 30px;
+
+}
+
+.category {
+
+  border: 1px solid var(--border);
+
+  background: white;
+
+  padding: 11px 17px;
+
+  border-radius: 25px;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+
+}
+
+.category.active {
+
+  background: var(--primary);
+
+  color: white;
+
+  border-color: var(--primary);
+
+}
+
+/* PRODUCTS */
+
+.products {
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
+
+  gap: 20px;
+
+}
+
+.product {
+
+  background: white;
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  border: 1px solid var(--border);
+
+  transition: .25s;
+
+}
+
+.product:hover {
+
+  transform: translateY(-5px);
+
+  box-shadow: 0 15px 30px rgba(0,0,0,.08);
+
+}
+
+.product-image {
+
+  height: 180px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: linear-gradient(135deg,#eef6ff,#e5efff);
+
+  font-size: 70px;
+
+  position: relative;
+
+}
+
+.badge {
+
+  position: absolute;
+
+  top: 12px;
+
+  left: 12px;
+
+  background: var(--green);
+
+  color: white;
+
+  padding: 6px 10px;
+
+  border-radius: 20px;
+
+  font-size: 11px;
+
+  font-weight: bold;
+
+}
+
+.product-info {
+
+  padding: 18px;
+
+}
+
+.product-category {
+
+  color: var(--primary);
+
+  font-size: 12px;
+
+  font-weight: bold;
+
+  margin-bottom: 7px;
+
+}
+
+.product h3 {
+
+  margin-bottom: 8px;
+
+  font-size: 18px;
+
+}
+
+.product-description {
+
+  color: var(--gray);
+
+  font-size: 13px;
+
+  line-height: 1.5;
+
+  min-height: 40px;
+
+}
+
+.product-bottom {
+
+  margin-top: 16px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+}
+
+.price {
+
+  font-size: 19px;
+
+  font-weight: bold;
+
+}
+
+.add-button {
+
+  border: none;
+
+  background: var(--dark);
+
+  color: white;
+
+  padding: 10px 13px;
+
+  border-radius: 9px;
+
+  cursor: pointer;
+
+}
+
+/* ABOUT */
+
+.about {
+
+  background: var(--dark);
+
+  color: white;
+
+  padding: 70px 0;
+
+}
+
+.about-grid {
+
+  display: grid;
+
+  grid-template-columns: repeat(2,1fr);
+
+  gap: 50px;
+
+  align-items: center;
+
+}
+
+.about h2 {
+
+  font-size: 34px;
+
+  margin-bottom: 15px;
+
+}
+
+.about p {
+
+  color: #b7c2d0;
+
+  line-height: 1.7;
+
+}
+
+.features {
+
+  display: grid;
+
+  grid-template-columns: repeat(2,1fr);
+
+  gap: 15px;
+
+}
+
+.feature {
+
+  background: rgba(255,255,255,.07);
+
+  padding: 20px;
+
+  border-radius: 14px;
+
+}
+
+.feature div {
+
+  font-size: 27px;
+
+  margin-bottom: 8px;
+
+}
+
+/* FOOTER */
+
+footer {
+
+  background: #040b15;
+
+  color: #9ca7b5;
+
+  text-align: center;
+
+  padding: 35px 20px;
+
+}
+
+footer h3 {
+
+  color: white;
+
+  margin-bottom: 10px;
+
+}
+
+/* CART */
+
+.cart-overlay {
+
+  display: none;
+
+  position: fixed;
+
+  inset: 0;
+
+  background: rgba(0,0,0,.55);
+
+  z-index: 2000;
+
+}
+
+.cart {
+
+  position: absolute;
+
+  right: 0;
+
+  top: 0;
+
+  width: min(420px,95%);
+
+  height: 100%;
+
+  background: white;
+
+  padding: 22px;
+
+  overflow-y: auto;
+
+}
+
+.cart-header {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding-bottom: 18px;
+
+  border-bottom: 1px solid var(--border);
+
+}
+
+.close-button {
+
+  border: none;
+
+  background: #ef4444;
+
+  color: white;
+
+  width: 38px;
+
+  height: 38px;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  font-size: 20px;
+
+}
+
+.cart-item {
+
+  padding: 18px 0;
+
+  border-bottom: 1px solid var(--border);
+
+}
+
+.cart-name {
+
+  font-weight: bold;
+
+}
+
+.cart-price {
+
+  color: var(--gray);
+
+  margin-top: 5px;
+
+}
+
+.quantity {
+
+  display: flex;
+
+  gap: 10px;
+
+  align-items: center;
+
+  margin-top: 10px;
+
+}
+
+.quantity button {
+
+  width: 30px;
+
+  height: 30px;
+
+  border: none;
+
+  border-radius: 7px;
+
+  cursor: pointer;
+
+}
+
+.remove {
+
+  margin-top: 10px;
+
+  border: none;
+
+  background: none;
+
+  color: #ef4444;
+
+  cursor: pointer;
+
+}
+
+.cart-total {
+
+  font-size: 22px;
+
+  font-weight: bold;
+
+  padding: 25px 0;
+
+}
+
+.checkout {
+
+  width: 100%;
+
+  border: none;
+
+  background: var(--green);
+
+  color: white;
+
+  padding: 15px;
+
+  border-radius: 11px;
+
+  font-size: 16px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+}
+
+.empty {
+
+  text-align: center;
+
+  padding: 50px 10px;
+
+  color: var(--gray);
+
+}
+
+/* MOBILE */
+
+@media(max-width:700px) {
+
+  nav {
+    display: none;
+  }
+
+  .hero {
+    min-height: 500px;
+  }
+
+  .hero h1 {
+    font-size: 38px;
+  }
+
+  .trust-bar {
+    grid-template-columns: 1fr;
+    margin-top: -20px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .products {
+    grid-template-columns: repeat(2,1fr);
+    gap: 12px;
+  }
+
+  .product-image {
+    height: 130px;
+    font-size: 50px;
+  }
+
+  .product-info {
+    padding: 12px;
+  }
+
+  .product h3 {
+    font-size: 15px;
+  }
+
+  .product-description {
+    font-size: 12px;
+  }
+
+  .product-bottom {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .add-button {
+    width: 100%;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+  <div class="logo">
+    Gizmo<span>Hub</span> 🇰🇪
+  </div>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#shop">Shop</a>
+    <a href="#about">About</a>
+  </nav>
+
+  <button class="cart-button" onclick="openCart()">
+    🛒 <span id="cartCount">0</span>
+  </button>
+
+</header>
+
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="hero-badge">
+⚡ Modern Tech • Kenya
+</div>
+
+<h1>
+Smart Gadgets.<br>
+<span>Better Living.</span>
+</h1>
+
+<p>
+Discover useful phone accessories, smart gadgets
+and home technology for your everyday life.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#shop" class="primary-button">
+Shop Gadgets 🛒
+</a>
+
+<a href="#about" class="secondary-button">
+Learn More
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<div class="container">
+
+<div class="trust-bar">
+
+<div class="trust-item">
+
+<div class="trust-icon">🚚</div>
+
+<div>
+<h4>Delivery</h4>
+<p>Delivery options available</p>
+</div>
+
+</div>
+
+
+<div class="trust-item">
+
+<div class="trust-icon">💬</div>
+
+<div>
+<h4>Easy Ordering</h4>
+<p>Order through WhatsApp</p>
+</div>
+
+</div>
+
+
+<div class="trust-item">
+
+<div class="trust-icon">🔒</div>
+
+<div>
+<h4>Shop Safely</h4>
+<p>Confirm availability first</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<section class="shop-section" id="shop">
+
+<div class="container">
+
+<div class="section-heading">
+
+<h2>Popular Gadgets</h2>
+
+<p>
+Explore useful gadgets and accessories.
+</p>
+
+</div>
+
+
+<div class="search-box">
+
+<input
+type="text"
+id="search"
+placeholder="🔎 Search gadgets..."
+oninput="showProducts()"
+>
+
+</div>
+
+
+<div class="categories">
+
+<button class="category active"
+onclick="setCategory('All',this)">
+All
+</button>
+
+<button class="category"
+onclick="setCategory('Phone',this)">
+📱 Phone
+</button>
+
+<button class="category"
+onclick="setCategory('Audio',this)">
+🎧 Audio
+</button>
+
+<button class="category"
+onclick="setCategory('Home',this)">
+🏠 Home
+</button>
+
+<button class="category"
+onclick="setCategory('Gaming',this)">
+🎮 Gaming
+</button>
+
+</div>
+
+
+<div class="products" id="products"></div>
+
+</div>
+
+</section>
+
+
+<section class="about" id="about">
+
+<div class="container">
+
+<div class="about-grid">
+
+<div>
+
+<h2>
+Technology Made Simple.
+</h2>
+
+<p>
+GizmoHub Kenya is an online gadget store
+focused on useful technology, phone accessories
+and smart home products.
+</p>
+
+<br>
+
+<p>
+We aim to make discovering gadgets simple
+and convenient.
+</p>
+
+</div>
+
+
+<div class="features">
+
+<div class="feature">
+
+<div>📱</div>
+
+<h3>Phone Accessories</h3>
+
+<p>
+Useful accessories for everyday devices.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div>💡</div>
+
+<h3>Smart Home</h3>
+
+<p>
+Technology for your home and workspace.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div>🎧</div>
+
+<h3>Audio</h3>
+
+<p>
+Earphones, speakers and more.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div>🎮</div>
+
+<h3>Gaming</h3>
+
+<p>
+Gear for your gaming setup.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<h3>GizmoHub Kenya 🇰🇪</h3>
+
+<p>
+Smart gadgets. Better living.
+</p>
+
+<br>
+
+<p>
+© 2026 GizmoHub Kenya
+</p>
+
+</footer>
+
+
+<!-- CART -->
+
+<div
+class="cart-overlay"
+id="cartOverlay"
+>
+
+<div class="cart">
+
+<div class="cart-header">
+
+<h2>Your Cart 🛒</h2>
+
+<button
+class="close-button"
+onclick="closeCart()"
+>
+×
+</button>
+
+</div>
+
+
+<div id="cartItems"></div>
+
+
+<div class="cart-total">
+
+Total:
+KSh
+<span id="cartTotal">
+0
+</span>
+
+</div>
+
+
+<button 
+class="checkout" 
+onclick="goToCheckout()">
+
+Proceed to Checkout →
+</button>
+
+</div>
+
+</div>
+
+
+<script>
+
+
+var products = [
+
+{
+
+name:
+"Adjustable Phone Stand",
+
+price:
+499,
+
+category:
+"Phone",
+
+icon:
+"📱",
+
+description:
+"Adjustable stand for watching videos and video calls."
+
+},
+
+{
+
+name:
+"Fast Charging Cable",
+
+price:
+399,
+
+category:
+"Phone",
+
+icon:
+"🔌",
+
+description:
+"Durable cable for compatible devices."
+
+},
+
+{
+
+name:
+"Wireless Earphones",
+
+price:
+1499,
+
+category:
+"Audio",
+
+icon:
+"🎧",
+
+description:
+"Compact wireless earphones for everyday listening."
+
+},
+
+{
+
+name:
+"Bluetooth Speaker",
+
+price:
+1799,
+
+category:
+"Audio",
+
+icon:
+"🔊",
+
+description:
+"Portable speaker with Bluetooth connectivity."
+
+},
+
+{
+
+name:
+"LED Desk Light",
+
+price:
+999,
+
+category:
+"Home",
+
+icon:
+"💡",
+
+description:
+"Useful LED light for your desk or workspace."
+
+},
+
+{
+
+name:
+"USB Mini Fan",
+
+price:
+799,
+
+category:
+"Home",
+
+icon:
+"🌀",
+
+description:
+"Compact fan powered through USB."
+
+},
+
+{
+
+name:
+"Gaming Controller",
+
+price:
+1999,
+
+category:
+"Gaming",
+
+icon:
+"🎮",
+
+description:
+"Controller for compatible gaming devices."
+
+},
+
+{
+
+name:
+"Mini Keyboard",
+
+price:
+1299,
+
+category:
+"Gaming",
+
+icon:
+"⌨️",
+
+description:
+"Compact keyboard for your setup."
+
+}
+
+];
+
+
+var cart = [];
+
+var currentCategory = "All";
+
+
+function setCategory(category,button) {
+
+currentCategory = category;
+
+var buttons =
+document.querySelectorAll(".category");
+
+for(
+var i = 0;
+i < buttons.length;
+i++
+) {
+
+buttons[i]
+.classList
+.remove("active");
+
+}
+
+button
+.classList
+.add("active");
+
+showProducts();
+
+}
+
+
+function showProducts() {
+
+var container =
+document.getElementById("products");
+
+var searchText =
+document
+.getElementById("search")
+.value
+.toLowerCase();
+
+
+container.innerHTML = "";
+
+
+var found = 0;
+
+
+for(
+var i = 0;
+i < products.length;
+i++
+) {
+
+var product =
+products[i];
+
+
+var matchesCategory =
+
+currentCategory === "All" ||
+
+product.category ===
+currentCategory;
+
+
+var matchesSearch =
+
+product.name
+.toLowerCase()
+.indexOf(searchText)
+!== -1;
+
+
+if(
+matchesCategory &&
+matchesSearch
+) {
+
+found++;
+
+
+container.innerHTML +=
+
+'<div class="product">' +
+
+'<div class="product-image">' +
+
+'<div class="badge">POPULAR</div>' +
+
+product.icon +
+
+'</div>' +
+
+
+'<div class="product-info">' +
+
+
+'<div class="product-category">' +
+
+product.category +
+
+'</div>' +
+
+
+'<h3>' +
+
+product.name +
+
+'</h3>' +
+
+
+'<div class="product-description">' +
+
+product.description +
+
+'</div>' +
+
+
+'<div class="product-bottom">' +
+
+
+'<div class="price">' +
+
+'KSh ' +
+
+product.price
+.toLocaleString() +
+
+'</div>' +
+
+
+'<button ' +
+
+'class="add-button" ' +
+
+'onclick="addToCart(' +
+
+i +
+
+')">' +
+
+'Add 🛒' +
+
+'</button>' +
+
+
+'</div>' +
+
+'</div>' +
+
+'</div>';
+
+}
+
+}
+
+
+if(found === 0) {
+
+container.innerHTML =
+
+'<div class="empty">' +
+
+'<h3>No products found</h3>' +
+
+'<br>' +
+
+'Try another search.' +
+
+'</div>';
+
+}
+
+}
+
+
+function addToCart(index) {
+
+var existing = -1;
+
+
+for(
+var i = 0;
+i < cart.length;
+i++
+) {
+
+if(
+cart[i].index === index
+) {
+
+existing = i;
+
+break;
+
+}
+
+}
+
+
+if(
+existing !== -1
+) {
+
+cart[existing]
+.quantity++;
+
+}
+
+else {
+
+cart.push({
+
+index: index,
+
+quantity: 1
+
+});
+
+}
+
+
+updateCart();
+
+
+}
+
+
+function increaseQuantity(index) {
+
+cart[index]
+.quantity++;
+
+
+updateCart();
+
+}
+
+
+function decreaseQuantity(index) {
+
+if(
+cart[index]
+.quantity > 1
+) {
+
+cart[index]
+.quantity--;
+
+}
+
+else {
+
+cart.splice(index,1);
+
+}
+
+
+updateCart();
+
+}
+
+
+function removeFromCart(index) {
+
+cart.splice(index,1);
+
+
+updateCart();
+
+}
+
+
+function updateCart() {
+
+var items =
+document
+.getElementById("cartItems");
+
+
+var count =
+document
+.getElementById("cartCount");
+
+
+var totalElement =
+document
+.getElementById("cartTotal");
+
+
+items.innerHTML = "";
+
+
+var total = 0;
+
+var countNumber = 0;
+
+
+if(
+cart.length === 0
+) {
+
+items.innerHTML =
+
+'<div class="empty">' +
+
+'🛒<br><br>' +
+
+'Your cart is empty.'
+
++
+
+'</div>';
+
+}
+
+
+for(
+var i = 0;
+i < cart.length;
+i++
+) {
+
+var item =
+cart[i];
+
+
+var product =
+products[item.index];
+
+
+var itemTotal =
+
+product.price *
+
+item.quantity;
+
+
+total += itemTotal;
+
+
+countNumber +=
+item.quantity;
+
+
+items.innerHTML +=
+
+'<div class="cart-item">' +
+
+
+'<div class="cart-name">' +
+
+product.icon +
+
+' ' +
+
+product.name +
+
+'</div>' +
+
+
+'<div class="cart-price">' +
+
+'KSh ' +
+
+itemTotal
+.toLocaleString() +
+
+'</div>' +
+
+
+'<div class="quantity">' +
+
+
+'<button onclick="decreaseQuantity(' +
+
+i +
+
+')">−</button>' +
+
+
+'<span>' +
+
+item.quantity +
+
+'</span>' +
+
+
+'<button onclick="increaseQuantity(' +
+
+i +
+
+')">+</button>' +
+
+
+'</div>' +
+
+
+'<button class="remove" ' +
+
+'onclick="removeFromCart(' +
+
+i +
+
+')">' +
+
+'Remove' +
+
+'</button>' +
+
+
+'</div>';
+
+}
+
+
+count.textContent =
+countNumber;
+
+
+totalElement.textContent =
+total.toLocaleString();
+
+}
+
+
+function openCart() {
+
+document
+.getElementById("cartOverlay")
+.style
+.display = "block";
+
+}
+
+
+function closeCart() {
+
+document
+.getElementById("cartOverlay")
+.style
+.display = "none";
+
+}
+
+
+function checkout() {
+
+if(
+cart.length === 0
+) {
+
+alert(
+"Your cart is empty."
+);
+
+return;
+
+}
+
+
+var message =
+
+"Hello GizmoHub Kenya!%0A%0A";
+
+
+var total = 0;
+
+
+for(
+var i = 0;
+i < cart.length;
+i++
+) {
+
+var item =
+cart[i];
+
+
+var product =
+products[item.index];
+
+
+var itemTotal =
+
+product.price *
+
+item.quantity;
+
+
+total += itemTotal;
+
+
+message +=
+
+product.name +
+
+" x" +
+
+item.quantity +
+
+" - KSh " +
+
+itemTotal +
+
+"%0A";
+
+}
+
+
+message +=
+
+"%0ATotal: KSh " +
+
+total +
+
+"%0A%0A" +
+
+"I would like to place an order.";
+
+
+/* Replace with a parent/guardian-approved business number */
+
+var phone =
+"254700000000";
+
+
+window.open(
+
+"https://wa.me/" +
+
+phone +
+
+"?text=" +
+
+message,
+
+"_blank"
+
+);
+
+}
+
+
+showProducts();
+
+updateCart();
+
+
+</script>
+
+</body>
+</html>
