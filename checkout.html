@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Checkout | GizmoHub Kenya</title>
+
+<style>
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f7fb;
+  color: #172033;
+}
+
+header {
+  background: #07111f;
+  color: white;
+  padding: 18px 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 23px;
+  font-weight: bold;
+}
+
+.logo span {
+  color: #1687e8;
+}
+
+.back {
+  color: white;
+  text-decoration: none;
+  background: #1687e8;
+  padding: 10px 15px;
+  border-radius: 8px;
+}
+
+.container {
+  width: 92%;
+  max-width: 900px;
+  margin: 35px auto;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.title p {
+  color: #667085;
+  margin-top: 8px;
+}
+
+.checkout-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  border: 1px solid #e4e7ec;
+}
+
+.card h2 {
+  margin-bottom: 20px;
+  font-size: 21px;
+}
+
+label {
+  display: block;
+  margin: 15px 0 7px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #d0d5dd;
+  border-radius: 9px;
+  font-size: 15px;
+}
+
+.delivery-option {
+  border: 2px solid #e4e7ec;
+  padding: 15px;
+  border-radius: 12px;
+  margin-top: 12px;
+  cursor: pointer;
+}
+
+.delivery-option:hover {
+  border-color: #1687e8;
+}
+
+.delivery-option input {
+  width: auto;
+  margin-right: 8px;
+}
+
+.delivery-title {
+  font-weight: bold;
+}
+
+.delivery-description {
+  color: #667085;
+  font-size: 13px;
+  margin-top: 5px;
+  margin-left: 27px;
+}
+
+.order-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 13px 0;
+  border-bottom: 1px solid #e4e7ec;
+}
+
+.total {
+  font-size: 21px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.order-button {
+  width: 100%;
+  margin-top: 20px;
+  border: none;
+  background: #16a34a;
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.empty {
+  color: #667085;
+  text-align: center;
+  padding: 30px;
+}
+
+@media(max-width:700px) {
+
+  .checkout-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+Gizmo<span>Hub</span> 🇰🇪
+</div>
+
+<a href="index.html" class="back">
+← Back to Shop
+</a>
+
+</header>
+
+
+<div class="container">
+
+<div class="title">
+
+<h1>Checkout 🛒</h1>
+
+<p>
+Enter your details and choose a delivery option.
+</p>
+
+</div>
+
+
+<div class="checkout-grid">
+
+
+<!-- CUSTOMER DETAILS -->
+
+<div class="card">
+
+<h2>Customer Details</h2>
+
+<label>Your Name</label>
+
+<input
+type="text"
+id="customerName"
+placeholder="Enter your name"
+>
+
+
+<label>Phone Number</label>
+
+<input
+type="tel"
+id="customerPhone"
+placeholder="07XXXXXXXX"
+>
+
+
+<label>Location / Town</label>
+
+<input
+type="text"
+id="location"
+placeholder="Enter your town or area"
+>
+
+
+<h2 style="margin-top:30px;">
+Delivery Method 🚚
+</h2>
+
+
+<label class="delivery-option">
+
+<input
+type="radio"
+name="delivery"
+value="Pickup"
+checked
+>
+
+<span class="delivery-title">
+📍 Pickup
+</span>
+
+<div class="delivery-description">
+Arrange pickup with GizmoHub Kenya.
+</div>
+
+</label>
+
+
+<label class="delivery-option">
+
+<input
+type="radio"
+name="delivery"
+value="Home Delivery"
+>
+
+<span class="delivery-title">
+🏠 Home Delivery
+</span>
+
+<div class="delivery-description">
+Delivery to your location. Cost confirmed before ordering.
+</div>
+
+</label>
+
+
+<label class="delivery-option">
+
+<input
+type="radio"
+name="delivery"
+value="Courier Delivery"
+>
+
+<span class="delivery-title">
+🚚 Courier Delivery
+</span>
+
+<div class="delivery-description">
+Products sent through a courier service.
+</div>
+
+</label>
+
+
+</div>
+
+
+<!-- ORDER SUMMARY -->
+
+<div class="card">
+
+<h2>Order Summary</h2>
+
+<div id="orderItems"></div>
+
+<div class="total">
+
+Total: KSh
+<span id="total">
+0
+</span>
+
+</div>
+
+
+<button
+class="order-button"
+onclick="placeOrder()"
+>
+
+💬 Place Order on WhatsApp
+
+</button>
+
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<script>
+
+var cart =
+JSON.parse(
+localStorage.getItem("gizmohubCart")
+) || [];
+
+
+var products = [
+
+{
+name:"Adjustable Phone Stand",
+price:499
+},
+
+{
+name:"Fast Charging Cable",
+price:399
+},
+
+{
+name:"Wireless Earphones",
+price:1499
+},
+
+{
+name:"Bluetooth Speaker",
+price:1799
+},
+
+{
+name:"LED Desk Light",
+price:999
+},
+
+{
+name:"USB Mini Fan",
+price:799
+},
+
+{
+name:"Gaming Controller",
+price:1999
+},
+
+{
+name:"Mini Keyboard",
+price:1299
+}
+
+];
+
+
+function showOrder() {
+
+var container =
+document.getElementById("orderItems");
+
+
+var totalElement =
+document.getElementById("total");
+
+
+container.innerHTML = "";
+
+
+var total = 0;
+
+
+if(cart.length === 0) {
+
+container.innerHTML =
+
+'<div class="empty">' +
+
+'Your cart is empty.<br><br>' +
+
+'<a href="index.html">' +
+
+'Go back to shop'
+
++
+
+'</a>' +
+
+'</div>';
+
+}
+
+
+for(
+var i = 0;
+i < cart.length;
+i++
+) {
+
+var item =
+cart[i];
+
+
+var product =
+products[item.index];
+
+
+if(!product) {
+continue;
+}
+
+
+var itemTotal =
+
+product.price *
+
+item.quantity;
+
+
+total += itemTotal;
+
+
+container.innerHTML +=
+
+'<div class="order-item">' +
+
+'<div>' +
+
+product.name +
+
+' x' +
+
+item.quantity +
+
+'</div>' +
+
+
+'<strong>KSh ' +
+
+itemTotal.toLocaleString() +
+
+'</strong>' +
+
+
+'</div>';
+
+}
+
+
+totalElement.textContent =
+total.toLocaleString();
+
+}
+
+
+function placeOrder() {
+
+var name =
+document
+.getElementById("customerName")
+.value;
+
+
+var phone =
+document
+.getElementById("customerPhone")
+.value;
+
+
+var location =
+document
+.getElementById("location")
+.value;
+
+
+var delivery =
+document
+.querySelector(
+'input[name="delivery"]:checked'
+)
+.value;
+
+
+if(
+name === "" ||
+phone === "" ||
+location === ""
+) {
+
+alert(
+"Please fill in all your details."
+);
+
+return;
+
+}
+
+
+if(cart.length === 0) {
+
+alert(
+"Your cart is empty."
+);
+
+return;
+
+}
+
+
+var message =
+
+"Hello GizmoHub Kenya!%0A%0A" +
+
+"*NEW ORDER*%0A%0A" +
+
+"Name: " +
+
+name +
+
+"%0A" +
+
+"Phone: " +
+
+phone +
+
+"%0A" +
+
+"Location: " +
+
+location +
+
+"%0A" +
+
+"Delivery: " +
+
+delivery +
+
+"%0A%0A" +
+
+"*ORDER:*%0A";
+
+
+var total = 0;
+
+
+for(
+var i = 0;
+i < cart.length;
+i++
+) {
+
+var item =
+cart[i];
+
+
+var product =
+products[item.index];
+
+
+if(!product) {
+continue;
+}
+
+
+var itemTotal =
+
+product.price *
+
+item.quantity;
+
+
+total += itemTotal;
+
+
+message +=
+
+product.name +
+
+" x" +
+
+item.quantity +
+
+" - KSh " +
+
+itemTotal +
+
+"%0A";
+
+}
+
+
+message +=
+
+"%0A*TOTAL: KSh " +
+
+total +
+
+"*";
+
+
+/* CHANGE TO YOUR BUSINESS WHATSAPP NUMBER */
+
+var businessPhone =
+"254700000000";
+
+
+window.open(
+
+"https://wa.me/" +
+
+businessPhone +
+
+"?text=" +
+
+message,
+
+"_blank"
+
+);
+
+}
+
+
+showOrder();
+
+</script>
+
+</body>
+</html>
